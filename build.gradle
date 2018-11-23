@@ -1,0 +1,59 @@
+buildscript {
+    ext.kotlin_version = '1.3.10'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+plugins {
+    id("com.gradle.build-scan") version "1.16"
+    id("jmfayard.github.io.gradle-kotlin-dsl-libs") version "0.2.6"  // $ ./gradlew syncLibs
+    id("kotlin2js") apply(false)
+    id("kotlin-dce-js") apply(false)
+}
+
+version '0.1'
+
+allprojects {
+    apply plugin: 'kotlin2js'
+    apply plugin: 'kotlin-dce-js'
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        compile Libs.kotlin_stdlib_js
+        compile Libs.webextensions_declarations
+        
+    }
+
+    compileKotlin2Js {
+        kotlinOptions.sourceMap = true
+        kotlinOptions.sourceMapEmbedSources = "always"
+    }
+}
+
+
+buildScan {
+    setTermsOfServiceUrl("https://gradle.com/terms-of-service")
+    setTermsOfServiceAgree("yes")
+    publishAlways()
+}
+
+
+// Update to the latest Gradle version with
+// $ ./gradlew syncLibs &&  ./gradlew wrapper
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+    setGradleVersion(Config.latestGradleVersion)
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+}

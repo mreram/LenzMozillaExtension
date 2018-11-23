@@ -1,0 +1,20 @@
+{
+  "description": "افزونه ای برای جستجو سریع در لنز",
+  "manifest_version": 2,
+  "name": "لنز",
+  "version": "1.0",
+  "icons": {
+    "48":"icons/favicon.png"
+  },
+
+  "background": {
+    "scripts": [
+      "build/kotlin-js-min/main/kotlin.js",
+      "build/kotlin-js-min/main/declarations.js",
+      "build/kotlin-js-min/main/ff-search-kotlin.js"
+    ]
+  },
+  "permissions": [
+    "menus",
+  ]
+}
