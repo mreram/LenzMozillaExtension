@@ -5,8 +5,8 @@ pluginManagement {
     }
     resolutionStrategy {
         eachPlugin {
-            def plugin = requested.id.id
-            def module = Config.pluginsResolution.get(plugin)
+            val plugin = requested.id.id
+            val module = Config.pluginsResolution.get(plugin)
             if (module != null) {
                 useModule(module)
             } else {
@@ -15,6 +15,6 @@ pluginManagement {
         }
     }
 }
-rootProject.name = 'ff-search-kotlin'
-include ':popup', ':content_script'
+rootProject.name = "lenz-mozilla-extension"
+include(":popup", ":content_script")
 

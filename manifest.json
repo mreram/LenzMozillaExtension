@@ -11,10 +11,10 @@
     "scripts": [
       "build/kotlin-js-min/main/kotlin.js",
       "build/kotlin-js-min/main/declarations.js",
-      "build/kotlin-js-min/main/ff-search-kotlin.js"
+      "build/kotlin-js-min/main/lenz-mozilla-extension.js"
     ]
   },
   "permissions": [
-    "menus",
+    "menus"
   ]
 }

@@ -7,13 +7,13 @@ import kotlin.String
  *
  * YOU are responsible for updating manually the dependency version. */
 object Versions {
-    const val webextensions_declarations: String = "v0.3"
+    const val webextensions_declarations: String = "v0.3" 
 
-    const val com_gradle_build_scan_gradle_plugin: String = "1.16"
+    const val com_gradle_build_scan_gradle_plugin: String = "1.16" //available: "2.0.2" 
 
     const val jmfayard_github_io_gradle_kotlin_dsl_libs_gradle_plugin: String = "0.2.6" 
 
-    const val org_jetbrains_kotlin: String = "1.3.0"
+    const val org_jetbrains_kotlin: String = "1.3.0" //available: "1.3.10" 
 
     /**
      *
@@ -25,8 +25,8 @@ object Versions {
 
         const val currentVersion: String = "4.10.2"
 
-        const val nightlyVersion: String = "5.1-20181111000030+0000"
+        const val nightlyVersion: String = "5.1-20181125000030+0000"
 
-        const val releaseCandidate: String = "5.0-rc-1"
+        const val releaseCandidate: String = "5.0-rc-5"
     }
 }
